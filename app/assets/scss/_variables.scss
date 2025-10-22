@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+
+$primary:        #3A54B4;
+$secondary:      #FEE6AA;   
+$primary-light:  #8896CD;
+$secondary-dark: #BFAD7F;   
+$dark:           #303030;
+$base:           #F0F0F0;
+$font-color:     rgb(254,230,170);
+ 
+$bg: #f5f7fb;
+$card: #fff;
+$ink: #1f2937;
+$muted: #6b7280;
+$brand: #0ea5e9;
+$radius: 16px;
+$shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+ 
+:root {
+  --bg: #{$bg};
+  --card: #{$card};
+  --ink: #{$ink};
+  --muted: #{$muted};
+  --brand: #{$brand};
+  --radius: #{$radius};
+  --shadow: #{$shadow};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --primary-light: #{$primary-light};
+  --secondary-dark: #{$secondary-dark};
+  --dark: #{$dark};
+  --base: #{$base};
+  --font-color: #{$font-color};
+}

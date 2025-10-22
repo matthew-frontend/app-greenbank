@@ -1,0 +1,12 @@
+@mixin card($pad: 18px) {
+  background: $card;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $pad;
+}
+
+@mixin container($max: 1100px) {
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
