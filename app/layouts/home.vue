@@ -1,6 +1,6 @@
 <template>
   <v-app class="bg-white">
-    <NavBar :is-home-page="false" />
+    <NavBar :is-home-page="true" />
     <v-main class="py-0">
       <slot />
     </v-main>
@@ -9,8 +9,8 @@
 </template>
 
 <style lang="scss" scoped>
-// เพิ่ม placeholder สำหรับ fixed header เมื่อ scroll
+// เพิ่ม padding-top เพื่อไม่ให้ content ถูกบังโดย fixed header
 :deep(.v-main) {
-  min-height: calc(100vh - 80px);
+  padding-top: 80px !important;
 }
 </style>
