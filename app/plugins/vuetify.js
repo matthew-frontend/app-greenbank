@@ -19,6 +19,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             success: "#10b981",
             warning: "#f59e0b",
             error: "#ef4444",
+            blue: "#0066ff",
             surface: "#fff",
             background: "#0b0b0c",
           },
@@ -34,7 +35,26 @@ export default defineNuxtPlugin((nuxtApp) => {
         xl: 1280,
       },
     },
-    defaults: {},
+    defaults: {
+      VTextField: {
+        rounded: "lg", // 12px
+      },
+      VTextarea: {
+        rounded: "lg",
+      },
+      VSelect: {
+        rounded: "lg",
+      },
+      VAutocomplete: {
+        rounded: "lg",
+      },
+      VCombobox: {
+        rounded: "lg",
+      },
+      VFileInput: {
+        rounded: "lg",
+      },
+    },
   });
 
   nuxtApp.vueApp.use(vuetifyApp);

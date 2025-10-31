@@ -1,6 +1,6 @@
 <template>
   <section class="section-inspiration">
-    <VContainer max-width="1240">
+    <VContainer max-width="1240" class="py-0">
       <h2>Inspiration</h2>
       <p class="description">
         ไอเดียในการแต่งบ้านแบบต่างๆ ลองหาแรงบันดาลใจใหม่ๆ ในการแต่งบ้านของคุณ

@@ -62,6 +62,9 @@ const tab = ref(tabs[0].value);
 .section-new {
   background-color: #fefbf8;
   padding: 60px 0 80px;
+  @media (max-width: 767px) {
+    padding: 40px 0 30px;
+  }
   h2 {
     font-size: 34px;
     margin: 0;

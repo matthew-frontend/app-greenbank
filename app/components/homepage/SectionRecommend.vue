@@ -66,6 +66,9 @@ const productsByCategory = computed(() => {
 <style scoped lang="scss">
 .section-recommend {
   padding: 80px 0 100px;
+  @media (max-width: 767px) {
+    padding: 40px 0 40px;
+  }
   h2 {
     font-size: 34px;
     font-weight: 700;

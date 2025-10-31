@@ -25,7 +25,7 @@
         <div v-if="cartItems.length === 0" class="empty-cart">
           <VIcon icon="mdi-cart-outline" size="100" color="grey" />
           <p>ตะกร้าสินค้าว่างเปล่า</p>
-          <VBtn color="primary" @click="$router.push('/')">
+          <VBtn color="primary" class="btn-shop" @click="$router.push('/')">
             เลือกซื้อสินค้า
           </VBtn>
         </div>
@@ -106,7 +106,13 @@
             <p class="vat-note">รวมภาษีมูลค่า</p>
           </div>
 
-          <VBtn color="primary" size="x-large" block class="checkout-btn-main">
+          <VBtn
+            color="primary"
+            size="x-large"
+            block
+            class="checkout-btn-main"
+            @click="goToCheckout"
+          >
             เริ่มสั่งซื้อ
           </VBtn>
 
@@ -144,6 +150,7 @@
             size="x-large"
             block
             class="checkout-btn-bottom"
+            @click="goToCheckout"
           >
             เริ่มสั่งซื้อ
           </VBtn>
@@ -155,6 +162,9 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const { cartItems, cartCount, cartTotal, updateQuantity, removeFromCart } =
   useCart();
@@ -166,6 +176,10 @@ const shippingFee = ref(50);
 const grandTotal = computed(() => {
   return cartTotal.value + shippingFee.value;
 });
+
+const goToCheckout = () => {
+  router.push("/checkout");
+};
 
 useHead({
   title: "ตะกร้าสินค้า",
@@ -425,6 +439,24 @@ useHead({
     :deep(span.v-btn__content) {
       color: #fff;
     }
+  }
+}
+.btn-shop {
+  max-width: 220px;
+  width: 100%;
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%) !important;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 12px;
+  height: 48px !important;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+  }
+  :deep(span.v-btn__content) {
+    color: #fff;
   }
 }
 

@@ -7,25 +7,27 @@
     :class="{
       'header--scrolled': isScrolled,
       'header--fixed': isHomePage,
-      'header--sticky': !isHomePage
+      'header--sticky': !isHomePage,
     }"
   >
     <VContainer max-width="1240" class="py-0 h-100">
       <div class="appBarFlex">
-        <!-- ปุ่มเมนูมือถือ -->
-        <VAppBarNavIcon class="d-md-none" @click="drawer = !drawer" />
-        <!-- โลโก้ / ชื่อแบรนด์ -->
-        <NuxtLink
-          to="/"
-          class="linkLogo d-flex align-center text-decoration-none text-white"
-        >
-          <img
-            src="https://gg.lnwfile.com/_webp_max_images/300/300/o5/1y/3h.webp"
-            alt=""
-            class="mr-2"
-          />
-          <!-- <span class="text-h6 font-weight-bold">Cozy</span> -->
-        </NuxtLink>
+        <div class="d-flex align-center">
+          <!-- ปุ่มเมนูมือถือ -->
+          <VAppBarNavIcon class="d-md-none" @click="drawer = !drawer" />
+          <!-- โลโก้ / ชื่อแบรนด์ -->
+          <NuxtLink
+            to="/"
+            class="linkLogo d-flex align-center text-decoration-none text-white"
+          >
+            <img
+              src="https://greenbank.shop/src/assets/green-bank-logo.png?t=1758775487049"
+              alt=""
+              class="mr-2"
+            />
+            <!-- <span class="text-h6 font-weight-bold">GREEN BANK SHOP</span> -->
+          </NuxtLink>
+        </div>
 
         <!-- เมนูหลัก -->
         <div class="d-none d-md-flex align-center">
@@ -56,7 +58,12 @@
   </VAppBar>
 
   <!-- Drawer Menu -->
-  <VNavigationDrawer v-model="drawer" temporary location="right">
+  <VNavigationDrawer
+    v-model="drawer"
+    temporary
+    location="right"
+    class="drawerMenu"
+  >
     <VList>
       <VListItem
         v-for="item in links"
@@ -79,8 +86,8 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 const props = defineProps({
   isHomePage: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 const drawer = ref(false);
@@ -90,12 +97,12 @@ const isScrolled = ref(false);
 const { isCartOpen, cartCount, toggleCart } = useCart();
 
 const links = [
-  { label: "Accessories", to: "/accessories" },
-  { label: "Greenhouse", to: "/greenhouse" },
-  { label: "Indoor", to: "/indoor" },
-  { label: "Outdoor", to: "/outdoor" },
-  { label: "Indoortrim", to: "/indoortrim" },
-  { label: "About Us", to: "/about-us" },
+  { label: "Accessories", to: "/products/accessories" },
+  { label: "Greenhouse", to: "/products/greenhouse" },
+  { label: "Indoor", to: "/products/indoor" },
+  { label: "Outdoor", to: "/products/outdoor" },
+  { label: "Indoortrim", to: "/products/indoortrim" },
+  { label: "About Us", to: "/about" },
   { label: "Contact Us", to: "/contact" },
 ];
 
@@ -167,7 +174,7 @@ onBeforeUnmount(() => {
   }
 
   .linkLogo {
-    height: 24px;
+    height: 60px;
     img {
       max-width: 100%;
       max-height: 100%;
@@ -212,6 +219,9 @@ onBeforeUnmount(() => {
       }
       .linkLogin {
         width: 100px;
+        @media (max-width: 991px) {
+          width: auto;
+        }
         a {
           color: #000;
           text-decoration: none;
@@ -231,6 +241,11 @@ onBeforeUnmount(() => {
 }
 .nav-link:hover {
   opacity: 0.7;
+}
+.drawerMenu {
+  height: 100% !important;
+  top: 0 !important;
+  z-index: 1009 !important;
 }
 
 // Animation สำหรับ header slide down
