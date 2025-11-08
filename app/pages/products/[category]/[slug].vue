@@ -53,7 +53,15 @@
               </template>
             </VExpansionPanelTitle>
             <VExpansionPanelText class="accordion-content">
-              <!-- เนื้อหารายละเอียด - จะใส่ภายหลัง -->
+              <div class="detail-collpase-product">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+                faucibus ex sapien vitae pellentesque sem placerat. In id cursus
+                mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
+                urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
+                egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu.
+                Ad litora torquent per conubia nostra inceptos himenaeos.
+              </div>
             </VExpansionPanelText>
           </VExpansionPanel>
 
@@ -67,7 +75,15 @@
               </template>
             </VExpansionPanelTitle>
             <VExpansionPanelText class="accordion-content">
-              <!-- เนื้อหาวิธีจัดส่ง - จะใส่ภายหลัง -->
+              <div class="detail-collpase-product">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+                faucibus ex sapien vitae pellentesque sem placerat. In id cursus
+                mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
+                urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
+                egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu.
+                Ad litora torquent per conubia nostra inceptos himenaeos.
+              </div>
             </VExpansionPanelText>
           </VExpansionPanel>
 
@@ -82,6 +98,15 @@
             </VExpansionPanelTitle>
             <VExpansionPanelText class="accordion-content">
               <!-- เนื้อหาวิธีสั่งซื้อ - จะใส่ภายหลัง -->
+              <div class="detail-collpase-product">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+                faucibus ex sapien vitae pellentesque sem placerat. In id cursus
+                mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
+                urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
+                egestas. Iaculis massa nisl malesuada lacinia integer nunc
+                posuere. Ut hendrerit semper vel class aptent taciti sociosqu.
+                Ad litora torquent per conubia nostra inceptos himenaeos.
+              </div>
             </VExpansionPanelText>
           </VExpansionPanel>
         </VExpansionPanels>
@@ -366,7 +391,7 @@ useHead({
   }
 
   :deep(.v-expansion-panel-text__wrapper) {
-    padding: 20px 24px;
+    padding: 0 24px 20px 24px;
     color: #666;
     font-size: 14px;
     line-height: 1.6;

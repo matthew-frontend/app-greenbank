@@ -20,11 +20,7 @@
             to="/"
             class="linkLogo d-flex align-center text-decoration-none text-white"
           >
-            <img
-              src="https://greenbank.shop/src/assets/green-bank-logo.png?t=1758775487049"
-              alt=""
-              class="mr-2"
-            />
+            <img src="/images/green-bank-club.png" alt="" class="mr-2" />
             <!-- <span class="text-h6 font-weight-bold">GREEN BANK SHOP</span> -->
           </NuxtLink>
         </div>
@@ -49,12 +45,38 @@
             <VIcon icon="mdi-cart-outline" size="20" color="#000" />
             <span v-if="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
           </div>
-          <div class="language-switcher" @click="toggleLanguage">
-            <span class="lang-text">{{
-              currentLocale === "th" ? "TH" : "EN"
-            }}</span>
-            <VIcon icon="mdi-chevron-down" size="16" color="#000" />
-          </div>
+          <VMenu offset-y>
+            <template v-slot:activator="{ props }">
+              <div class="language-switcher" v-bind="props">
+                <span class="lang-text">{{
+                  currentLocale === "th" ? "TH" : "EN"
+                }}</span>
+                <VIcon icon="mdi-chevron-down" size="16" color="#000" />
+              </div>
+            </template>
+            <VList density="compact" class="language-dropdown">
+              <VListItem
+                value="th"
+                :class="{ 'active-lang': currentLocale === 'th' }"
+                @click="changeLanguage('th')"
+              >
+                <VListItemTitle class="d-flex align-center gap-2">
+                  <span class="flag-icon">🇹🇭</span>
+                  <span>ไทย (TH)</span>
+                </VListItemTitle>
+              </VListItem>
+              <VListItem
+                value="en"
+                :class="{ 'active-lang': currentLocale === 'en' }"
+                @click="changeLanguage('en')"
+              >
+                <VListItemTitle class="d-flex align-center gap-2">
+                  <span class="flag-icon">🇬🇧</span>
+                  <span>English (EN)</span>
+                </VListItemTitle>
+              </VListItem>
+            </VList>
+          </VMenu>
           <div class="linkLogin">
             <NuxtLink to="/login" class="">เข้าสู่ระบบ</NuxtLink>
           </div>
@@ -107,9 +129,9 @@ const isSearchOpen = ref(false);
 // Use cart composable
 const { isCartOpen, cartCount, toggleCart } = useCart();
 
-// Language toggle function
-const toggleLanguage = () => {
-  currentLocale.value = currentLocale.value === "th" ? "en" : "th";
+// Language change function
+const changeLanguage = (lang) => {
+  currentLocale.value = lang;
   // TODO: Integrate with i18n when available
   console.log("Language changed to:", currentLocale.value);
 };
@@ -192,7 +214,10 @@ onBeforeUnmount(() => {
   }
 
   .linkLogo {
-    height: 60px;
+    max-width: 150px;
+    @media (max-width: 767px) {
+      max-width: 100px;
+    }
     img {
       max-width: 100%;
       max-height: 100%;
@@ -288,6 +313,44 @@ onBeforeUnmount(() => {
   height: 100% !important;
   top: 0 !important;
   z-index: 1009 !important;
+}
+
+// Language Dropdown Styles
+.language-dropdown {
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  :deep(.v-list-item) {
+    padding: 8px 16px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &.active-lang {
+      background-color: #fff3e0;
+
+      .v-list-item-title {
+        color: #d49f4d;
+        font-weight: 600;
+      }
+    }
+
+    .v-list-item-title {
+      font-size: 14px;
+      display: flex;
+      gap: 10px;
+      .flag-icon {
+        font-size: 18px;
+      }
+
+      .gap-2 {
+        gap: 8px;
+      }
+    }
+  }
 }
 
 // Animation สำหรับ header slide down

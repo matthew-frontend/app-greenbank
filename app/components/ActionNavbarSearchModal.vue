@@ -39,7 +39,10 @@
         </div>
 
         <!-- Suggested/Recent Searches -->
-        <div v-if="!searchQuery && recentSearches.length > 0" class="suggestions-section">
+        <div
+          v-if="!searchQuery && recentSearches.length > 0"
+          class="suggestions-section"
+        >
           <h3 class="suggestions-title">คำค้นหาล่าสุด</h3>
           <div class="suggestions-chips">
             <VBtn
@@ -55,7 +58,10 @@
         </div>
 
         <!-- Search Results -->
-        <div v-if="searchQuery && searchResults.length > 0" class="results-section">
+        <div
+          v-if="searchQuery && searchResults.length > 0"
+          class="results-section"
+        >
           <h3 class="results-title">ผลการค้นหา ({{ searchResults.length }})</h3>
           <div class="results-grid">
             <CardProduct
@@ -68,7 +74,10 @@
         </div>
 
         <!-- No Results -->
-        <div v-if="searchQuery && searchResults.length === 0" class="no-results">
+        <div
+          v-if="searchQuery && searchResults.length === 0"
+          class="no-results"
+        >
           <VIcon icon="mdi-magnify" size="64" color="#ccc" />
           <p>ไม่พบสินค้าที่ค้นหา "{{ searchQuery }}"</p>
         </div>
@@ -114,19 +123,24 @@ const searchResults = computed(() => {
   if (!searchQuery.value) return [];
 
   const query = searchQuery.value.toLowerCase().trim();
-  return allProducts.filter((product) => {
-    return (
-      product.name.toLowerCase().includes(query) ||
-      product.description.toLowerCase().includes(query) ||
-      product.category.toLowerCase().includes(query)
-    );
-  }).slice(0, 12); // Limit to 12 results
+  return allProducts
+    .filter((product) => {
+      return (
+        product.name.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query) ||
+        product.category.toLowerCase().includes(query)
+      );
+    })
+    .slice(0, 12); // Limit to 12 results
 });
 
 // Save to localStorage
 const saveRecentSearches = () => {
   if (process.client) {
-    localStorage.setItem("recentSearches", JSON.stringify(recentSearches.value));
+    localStorage.setItem(
+      "recentSearches",
+      JSON.stringify(recentSearches.value)
+    );
   }
 };
 
@@ -180,17 +194,19 @@ watch(searchQuery, (newVal) => {
 });
 
 // Reset search when modal closes
-watch(() => props.isOpen, (newVal) => {
-  if (!newVal) {
-    searchQuery.value = "";
+watch(
+  () => props.isOpen,
+  (newVal) => {
+    if (!newVal) {
+      searchQuery.value = "";
+    }
   }
-});
+);
 </script>
 
 <style scoped lang="scss">
 .search-overlay {
   background-color: #fff;
-  min-height: 100vh;
   padding: 40px 20px;
 }
 

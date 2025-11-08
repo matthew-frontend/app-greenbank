@@ -6,11 +6,11 @@
           <v-col cols="12" md="7">
             <!-- Left Column - Steps -->
             <div class="checkout-steps">
-              <!-- Step 1: Contact Information -->
+              <!-- Step 2: Shipping -->
               <div class="checkout-step">
                 <div class="step-header" @click="toggleStep(1)">
                   <div class="step-number">1</div>
-                  <h2 class="step-title">การติดต่อ</h2>
+                  <h2 class="step-title">การจัดส่ง</h2>
                   <VIcon
                     :icon="
                       activeStep === 1 ? 'mdi-chevron-up' : 'mdi-chevron-down'
@@ -20,66 +20,47 @@
                 </div>
 
                 <div v-show="activeStep === 1" class="step-content">
-                  <p class="step-description">
-                    กรอกข้อมูลส่งการยืนยันแจ้งยังยังขึ้นเอก
-                  </p>
+                  <div class="">
+                    <p class="step-description">
+                      สมาชิกเข้าสู่ระบบเพื่อสั่งซื้อ
+                    </p>
 
-                  <div class="login-link">
-                    <VIcon icon="mdi-login" size="20" />
-                    <NuxtLink to="/login">เข้าสู่ระบบ</NuxtLink>
+                    <!-- <div class="login-link">
+                      <VIcon icon="mdi-login" size="20" />
+                      <NuxtLink to="/login">เข้าสู่ระบบ</NuxtLink>
+                    </div> -->
+
+                    <v-row>
+                      <v-col cols="12" md="4">
+                        <VTextField
+                          v-model="contact.email"
+                          label="อีเมลล์"
+                          variant="outlined"
+                          density="comfortable"
+                          hide-details
+                        />
+                      </v-col>
+                      <v-col cols="12" md="4">
+                        <VTextField
+                          v-model="contact.password"
+                          label="รหัสผ่าน"
+                          variant="outlined"
+                          density="comfortable"
+                          type="password"
+                          hide-details
+                        />
+                      </v-col>
+                      <v-col cols="12" md="4">
+                        <div class="step-actions mt-0">
+                          <VBtn size="large" class="next-btn" @click="nextStep">
+                            เข้าสู่ระบบ
+                          </VBtn>
+                        </div>
+                      </v-col>
+                    </v-row>
                   </div>
-
-                  <v-row>
-                    <v-col cols="12" md="6">
-                      <VTextField
-                        v-model="contact.phone"
-                        label="เบอร์มือถือ"
-                        variant="outlined"
-                        density="comfortable"
-                        hide-details
-                      />
-                    </v-col>
-                    <v-col cols="12" md="6">
-                      <VTextField
-                        v-model="contact.email"
-                        label="อีเมล"
-                        variant="outlined"
-                        density="comfortable"
-                        hide-details
-                      />
-                    </v-col>
-                  </v-row>
-
-                  <div class="step-actions">
-                    <VBtn
-                      variant="text"
-                      class="back-btn"
-                      @click="$router.push('/cart')"
-                    >
-                      <VIcon icon="mdi-chevron-left" start />
-                      เลือกซื้อสินค้าเพิ่ม
-                    </VBtn>
-                    <VBtn size="large" class="next-btn" @click="nextStep">
-                      ต่อไป
-                    </VBtn>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 2: Shipping -->
-              <div class="checkout-step">
-                <div class="step-header" @click="toggleStep(2)">
-                  <div class="step-number">2</div>
-                  <h2 class="step-title">การจัดส่ง</h2>
-                  <VIcon
-                    :icon="
-                      activeStep === 2 ? 'mdi-chevron-up' : 'mdi-chevron-down'
-                    "
-                    class="toggle-icon"
-                  />
-                </div>
-
-                <div v-show="activeStep === 2" class="step-content">
+                  <div class="or"><span>หรือ</span></div>
+                  <p class="step-description">ระบุข้อมูลการจัดส่ง</p>
                   <VTextField
                     v-model="shipping.fullName"
                     label="ชื่อ-นามสกุล"
@@ -154,24 +135,24 @@
                 </div>
               </div>
 
-              <!-- Step 3: Payment -->
+              <!-- Step 2: Payment -->
               <div class="checkout-step">
-                <div class="step-header" @click="toggleStep(3)">
-                  <div class="step-number">3</div>
+                <div class="step-header" @click="toggleStep(2)">
+                  <div class="step-number">2</div>
                   <h2 class="step-title">การชำระเงิน</h2>
                   <VIcon
                     :icon="
-                      activeStep === 3 ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                      activeStep === 2 ? 'mdi-chevron-up' : 'mdi-chevron-down'
                     "
                     class="toggle-icon"
                   />
                 </div>
 
-                <div v-show="activeStep === 3" class="step-content">
+                <div v-show="activeStep === 2" class="step-content">
                   <VRadioGroup v-model="payment.method">
                     <VRadio value="transfer" label="โอนเงินผ่านธนาคาร" />
+                    <VRadio value="promptpay" label="สแกน QR" />
                     <VRadio value="cod" label="เก็บเงินปลายทาง (COD)" />
-                    <VRadio value="promptpay" label="พร้อมเพย์" />
                   </VRadioGroup>
 
                   <div class="step-actions">
@@ -289,6 +270,102 @@
         </v-row>
       </div>
     </VContainer>
+
+    <!-- QR Code Modal -->
+    <VDialog v-model="showQrModal" max-width="500">
+      <VCard>
+        <VCardTitle class="d-flex justify-space-between align-center">
+          <span>สแกน QR Code เพื่อชำระเงิน</span>
+          <VBtn icon="mdi-close" variant="text" @click="showQrModal = false" />
+        </VCardTitle>
+        <VCardText class="text-center py-8">
+          <div class="qr-code-container">
+            <img
+              src="https://hexdocs.pm/qr_code/2.2.1/docs/qrcode.svg"
+              alt="QR Code"
+              class="qr-code-image"
+            />
+          </div>
+          <div class="mt-4">
+            <p class="text-h6 font-weight-bold">
+              ยอดชำระ: ฿{{ grandTotal.toLocaleString() }}
+            </p>
+            <p class="text-body-2 text-grey mt-2">
+              กรุณาสแกน QR Code เพื่อชำระเงินผ่าน PromptPay
+            </p>
+          </div>
+        </VCardText>
+        <VCardActions class="justify-center pb-4">
+          <VBtn
+            color="primary"
+            size="large"
+            variant="flat"
+            class="btn-payment"
+            @click="confirmPayment"
+          >
+            ยืนยันการชำระเงิน
+          </VBtn>
+        </VCardActions>
+      </VCard>
+    </VDialog>
+
+    <!-- Bank Transfer Modal -->
+    <VDialog v-model="showBankModal" max-width="500">
+      <VCard>
+        <VCardTitle class="d-flex justify-space-between align-center">
+          <span>ข้อมูลบัญชีสำหรับโอนเงิน</span>
+          <VBtn
+            icon="mdi-close"
+            variant="text"
+            @click="showBankModal = false"
+          />
+        </VCardTitle>
+        <VCardText class="py-6">
+          <div class="bank-info">
+            <div class="bank-item">
+              <div class="bank-logo">
+                <VIcon icon="mdi-bank" size="40" color="success" />
+              </div>
+              <div class="bank-details">
+                <p class="text-h6 font-weight-bold mb-2">ธนาคารกสิกรไทย</p>
+                <div class="info-row">
+                  <span class="label">ชื่อบัญชี:</span>
+                  <span class="value">บริษัท กรีนแบงก์ จำกัด</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">เลขที่บัญชี:</span>
+                  <span class="value font-weight-bold">123-4-56789-0</span>
+                </div>
+                <div class="info-row">
+                  <span class="label">ยอดชำระ:</span>
+                  <span class="value text-success font-weight-bold">
+                    ฿{{ grandTotal.toLocaleString() }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <VAlert type="info" variant="tonal" class="mt-4">
+              <p class="text-body-2">
+                กรุณาโอนเงินตามยอดที่ระบุ และแนบหslip การโอนเงินส่งมาที่
+                <strong>Line: @greenbank</strong> หรือ
+                <strong>Email: payment@greenbank.com</strong>
+              </p>
+            </VAlert>
+          </div>
+        </VCardText>
+        <VCardActions class="justify-center pb-4">
+          <VBtn
+            color="primary"
+            size="large"
+            variant="flat"
+            class="btn-payment"
+            @click="confirmPayment"
+          >
+            ยืนยันการสั่งซื้อ
+          </VBtn>
+        </VCardActions>
+      </VCard>
+    </VDialog>
   </div>
 </template>
 
@@ -300,6 +377,8 @@ const { cartItems, cartTotal, updateQuantity } = useCart();
 const activeStep = ref(1);
 const discountCode = ref("");
 const shippingFee = ref(50);
+const showQrModal = ref(false);
+const showBankModal = ref(false);
 
 const contact = ref({
   phone: "",
@@ -326,11 +405,11 @@ const grandTotal = computed(() => {
 });
 
 const toggleStep = (step) => {
-  activeStep.value = activeStep.value === step ? 0 : step;
+  activeStep.value = activeStep.value === step ? 1 : step;
 };
 
 const nextStep = () => {
-  if (activeStep.value < 3) {
+  if (activeStep.value < 2) {
     activeStep.value++;
   }
 };
@@ -343,7 +422,30 @@ const prevStep = () => {
 
 const submitOrder = () => {
   console.log("Order submitted", { contact, shipping, payment });
+
+  // เช็ควิธีการชำระเงิน
+  if (payment.value.method === "promptpay") {
+    // แสดง QR Code Modal
+    showQrModal.value = true;
+  } else if (payment.value.method === "transfer") {
+    // แสดง Bank Transfer Modal
+    showBankModal.value = true;
+  } else if (payment.value.method === "cod") {
+    // COD ยืนยันเลย
+    confirmPayment();
+  }
+};
+
+const confirmPayment = () => {
+  // ปิด modal ทั้งหมด
+  showQrModal.value = false;
+  showBankModal.value = false;
+
+  // แสดงข้อความยืนยัน
   alert("ยืนยันการสั่งซื้อเรียบร้อย");
+
+  // TODO: Navigate to order confirmation page
+  // navigateTo('/order-confirmation')
 };
 
 useHead({
@@ -352,6 +454,100 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
+.btn-payment {
+  padding: 0 15px;
+  :deep(.v-btn__content) {
+    color: #fff;
+  }
+}
+// Modal Styles
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  .qr-code-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.bank-info {
+  .bank-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    margin-bottom: 16px;
+
+    .bank-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: #fff;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .bank-details {
+      flex: 1;
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #e0e0e0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .label {
+          font-size: 14px;
+          color: #666;
+        }
+
+        .value {
+          font-size: 14px;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.or {
+  text-align: center;
+  position: relative;
+  margin: 40px 0;
+  span {
+    width: 60px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  &::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+}
 .checkout-page {
   background-color: #fff;
   min-height: 100vh;
@@ -478,19 +674,6 @@ useHead({
         height: 48px !important;
         box-shadow: none;
         :deep(span.v-btn__content) {
-          color: #fff;
-        }
-      }
-
-      .submit-btn {
-        background: linear-gradient(
-          135deg,
-          #0066ff 0%,
-          #0052cc 100%
-        ) !important;
-        box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
-
-        :deep(.v-btn__content) {
           color: #fff;
         }
       }

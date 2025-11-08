@@ -6,14 +6,11 @@
         <div class="footer-brand">
           <div class="brand-section">
             <div class="logo">
-              <img
-                src="https://greenbank.shop/src/assets/green-bank-logo.png?t=1758775487049"
-                alt="Logo"
-              />
-              <div>
+              <img src="/images/green-bank-club.png" alt="Logo" />
+              <!-- <div>
                 <span class="logo-text">GREEN BANK SHOP</span>
                 <p class="brand-description">Greenbank Shop - ธนาคารสีเขียว</p>
-              </div>
+              </div> -->
             </div>
             <div class="location">
               <p>แผนที่ร้าน</p>
@@ -250,13 +247,10 @@ const goToCart = () => {
     }
     .brand-section {
       .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
-
+        max-width: 200px;
         img {
-          height: 60px;
+          width: 100%;
+          height: 100%;
         }
 
         .logo-text {
