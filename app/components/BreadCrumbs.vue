@@ -30,6 +30,8 @@ const props = defineProps({
 .breadcrumbs {
   padding: 16px 0;
   margin-bottom: 30px;
+  flex-wrap: wrap;
+  row-gap: 10px;
   :deep(.v-breadcrumbs-item) {
     font-size: 16px;
     font-weight: 500;

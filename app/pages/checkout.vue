@@ -471,21 +471,12 @@ useHead({
       .submit-btn {
         max-width: 220px;
         width: 100%;
-        background: linear-gradient(
-          135deg,
-          #0066ff 0%,
-          #0052cc 100%
-        ) !important;
+        background-color: $green;
         text-transform: none;
         font-size: 16px;
         font-weight: 500;
-        border-radius: 12px;
         height: 48px !important;
-        box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
-
-        &:hover {
-          box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
-        }
+        box-shadow: none;
         :deep(span.v-btn__content) {
           color: #fff;
         }

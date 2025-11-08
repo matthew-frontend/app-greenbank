@@ -14,12 +14,13 @@ export default defineNuxtPlugin((nuxtApp) => {
       themes: {
         light: {
           colors: {
-            primary: "#D49F4D",
+            primary: "#268c6f",
             secondary: "#64748b",
             success: "#10b981",
             warning: "#f59e0b",
             error: "#ef4444",
             blue: "#0066ff",
+            green: "#268c6f",
             surface: "#fff",
             background: "#0b0b0c",
           },

@@ -24,7 +24,7 @@
         <div class="right">
           <div class="imageReccommend">
             <img
-              src="https://gg.lnwfile.com/_webp_max_images/2048/2048/v7/i9/a5.webp"
+              src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/516394115_1040425548287562_6586316746366259364_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=sBmBP5zVwnQQ7kNvwHyJLlf&_nc_oc=AdnGtfzZ8Ko0NSFcNiOKPz8Yvg03p-bZAcwGKzf4hNT7n8b58QIfGXKxmX05ofI1uw6OXmRDX1ZcP_1rNYjLytV3&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_gid=Mk0ty_ggi2gGXOCEsFb1lQ&oh=00_AfiXoNnHbF1Rz_zi60S8DueB9XZmB7F2BI_SeetfxGV2ZA&oe=69149862"
               alt=""
             />
           </div>
@@ -93,8 +93,11 @@ const productsByCategory = computed(() => {
       flex-basis: 75%;
       .imageReccommend {
         width: 100%;
-        height: 100%;
+        height: 350px;
         line-height: 0;
+        @media (max-width: 767px) {
+          height: 300px;
+        }
         img {
           width: 100%;
           height: 100%;

@@ -27,7 +27,7 @@
       <swiper-slide>
         <div class="image">
           <img
-            src="https://gg.lnwfile.com/_webp_max_images/1024/1024/yy/qt/10.webp"
+            src="https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7602531541048867.png"
             alt=""
           />
         </div>
@@ -35,7 +35,7 @@
       <swiper-slide>
         <div class="image">
           <img
-            src="https://gg.lnwfile.com/_webp_max_images/1024/1024/m5/k2/c1.webp"
+            src="https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.798636217844385.png"
             alt=""
           />
         </div>
@@ -43,7 +43,7 @@
       <swiper-slide>
         <div class="image">
           <img
-            src="https://gg.lnwfile.com/_webp_max_images/1024/1024/i8/3e/cz.webp"
+            src="https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.4373304906452201.png"
             alt=""
           />
         </div>
@@ -51,7 +51,7 @@
       <swiper-slide>
         <div class="image">
           <img
-            src="https://gg.lnwfile.com/_webp_max_images/1024/1024/s3/4y/f6.webp"
+            src="https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.27702617146478903.png"
             alt=""
           />
         </div>
@@ -59,7 +59,7 @@
       <swiper-slide>
         <div class="image">
           <img
-            src="https://gg.lnwfile.com/_webp_max_images/1024/1024/ge/5x/z3.webp"
+            src="https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.4628406952479457.jpg"
             alt=""
           />
         </div>
@@ -67,7 +67,7 @@
       <swiper-slide>
         <div class="image">
           <img
-            src="https://gg.lnwfile.com/_webp_max_images/1024/1024/yy/qt/10.webp"
+            src="https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.8274828727219088.png"
             alt=""
           />
         </div>

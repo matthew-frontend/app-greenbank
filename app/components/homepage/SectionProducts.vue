@@ -9,10 +9,7 @@
           class="boxProduct"
         >
           <div class="imageProduct">
-            <img
-              :src="category.image"
-              :alt="category.label"
-            />
+            <img :src="category.image" :alt="category.label" />
             <div class="textProduct">
               <h3>{{ category.label }}</h3>
             </div>
@@ -24,31 +21,36 @@
 </template>
 
 <script setup>
-import { categories } from '~/data/products.js'
+import { categories } from "~/data/products.js";
 
 // Add images to categories
 const categoryData = [
   {
     ...categories[0], // accessories
-    image: 'https://gg.lnwfile.com/_webp_max_images/1024/1024/op/wr/5c.webp'
+    image:
+      "https://img.freepik.com/premium-photo/vertical-shot-bong-pipe-filled-with-weed-set-accessories-smoking-cannabis-marijuana_274234-16411.jpg",
   },
   {
     ...categories[1], // greenhouse
-    image: 'https://gg.lnwfile.com/_webp_max_images/1024/1024/37/ms/g3.webp'
+    image:
+      "https://www.vostermans.com/hubfs/Images/Product%20applications/V-FloFan/Greenhous/Portrait/Multifan%20V-FloFan%20Medicinal%20Cannabis%20P.jpg",
   },
   {
     ...categories[2], // indoor
-    image: 'https://gg.lnwfile.com/_webp_max_images/1024/1024/0h/dt/9g.webp'
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvvRM39cb-NZ-2HsMN2om1IAyBAOkqG-MqQ&s",
   },
   {
     ...categories[3], // outdoor
-    image: 'https://gg.lnwfile.com/_webp_max_images/1024/1024/ge/15/tv.webp'
+    image:
+      "https://thehempmine.com/cdn/shop/articles/Picture4_1200x.jpg?v=1628110962",
   },
   {
     ...categories[4], // indoortrim
-    image: 'https://gg.lnwfile.com/_webp_max_images/1024/1024/ge/15/tv.webp'
-  }
-]
+    image:
+      "https://mobiustrimmer.com/wp-content/uploads/2022/04/mobius-conveyor-blog-img-scaled.jpeg",
+  },
+];
 </script>
 
 <style scoped lang="scss">
@@ -84,9 +86,10 @@ const categoryData = [
       background-color: #000000;
       transition: all 0.3s ease;
       line-height: 0;
+      height: 100%;
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
         transition: transform 1s ease, opacity 0.3s ease,
           -webkit-transform 1s ease;

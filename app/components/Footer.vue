@@ -15,6 +15,33 @@
                 <p class="brand-description">Greenbank Shop - ธนาคารสีเขียว</p>
               </div>
             </div>
+            <div class="location">
+              <p>แผนที่ร้าน</p>
+              <NuxtLink
+                to="https://maps.app.goo.gl/NCm7o8fkkPVXfair5"
+                target="_blank"
+              >
+                <VIcon icon="mdi-map-marker" />
+              </NuxtLink>
+              <NuxtLink
+                to="https://maps.app.goo.gl/NCm7o8fkkPVXfair5"
+                target="_blank"
+              >
+                <VIcon icon="mdi-map-marker" />
+              </NuxtLink>
+            </div>
+            <p class="detail-footer">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
           </div>
         </div>
         <div class="right-footer">
@@ -29,7 +56,8 @@
               <li><NuxtLink to="/products/indoor">Indoor</NuxtLink></li>
               <li><NuxtLink to="/products/outdoor">Ourdoot</NuxtLink></li>
               <li><NuxtLink to="/products/indoortrim">Indoortrim</NuxtLink></li>
-              <li><NuxtLink to="/about">About Us</NuxtLink></li>
+              <li><NuxtLink to="/products">Products</NuxtLink></li>
+              <li><NuxtLink to="/blog">Blogs</NuxtLink></li>
               <li><NuxtLink to="/contact">Contact Us</NuxtLink></li>
             </ul>
           </div>
@@ -69,6 +97,10 @@
       </div>
       <!-- Copyright -->
       <div class="footer-bottom">
+        <p class="text-center text-des">
+          ห้ามจำหน่ายหรือส่งต่อให้แก่ผู้ที่มีอายุต่ำกว่า 20 ปี หญิงตั้งครรภ์
+          หญิงให้นมบุตร และผู้ที่มีปัญหาสุขภาพที่ควรหลีกเลี่ยงการใช้กัญชา
+        </p>
         <p class="copyright">© 2024 Green Bank Shop. All rights reserved.</p>
       </div>
     </VContainer>
@@ -78,14 +110,6 @@
       <!-- Menu Items -->
       <transition-group name="fab-items">
         <div v-if="menuOpen" class="fab-items-container">
-          <!-- Language -->
-          <div class="fab-item">
-            <div class="fab-label">เปลี่ยนภาษา (EN)</div>
-            <VBtn icon color="#2d5016" elevation="4" class="fab-btn">
-              <VIcon icon="mdi-web" size="20" color="white" />
-            </VBtn>
-          </div>
-
           <!-- Fanpage -->
           <div class="fab-item">
             <div class="fab-label">Fanpage</div>
@@ -267,6 +291,18 @@ const goToCart = () => {
         }
       }
     }
+    .location {
+      margin-bottom: 20px;
+      a {
+        margin-right: 15px;
+      }
+      p {
+        margin-bottom: 5px;
+      }
+    }
+    .detail-footer {
+      color: #666;
+    }
   }
   .right-footer {
     width: 50%;
@@ -337,6 +373,12 @@ const goToCart = () => {
 
 .footer-bottom {
   padding: 30px 0;
+  .text-des {
+    color: #666;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
   .copyright {
     text-align: center;
     font-size: 13px;

@@ -5,7 +5,7 @@
         <VCol cols="12" xs="12" sm="6">
           <div class="leftHighlight">
             <img
-              src="https://gg.lnwfile.com/_webp_max_images/1024/1024/gb/wa/ra.webp"
+              src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/516394115_1040425548287562_6586316746366259364_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=sBmBP5zVwnQQ7kNvwHyJLlf&_nc_oc=AdnGtfzZ8Ko0NSFcNiOKPz8Yvg03p-bZAcwGKzf4hNT7n8b58QIfGXKxmX05ofI1uw6OXmRDX1ZcP_1rNYjLytV3&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_gid=Mk0ty_ggi2gGXOCEsFb1lQ&oh=00_AfiXoNnHbF1Rz_zi60S8DueB9XZmB7F2BI_SeetfxGV2ZA&oe=69149862"
               alt=""
             />
           </div>
@@ -34,6 +34,14 @@
   padding: 60px 20px;
   @media (max-width: 599px) {
     padding: 0;
+  }
+  .leftHighlight {
+    height: 400px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .rightHighlight {
     @media (min-width: 1200px) {

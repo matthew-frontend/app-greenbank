@@ -20,14 +20,16 @@ export const products = [
     realPrice: 1928.5,
     fullPrice: 2755,
     discount: 30,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/g2/b1/o4.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
     images: [
-      "https://gg.lnwfile.com/_webp_resize_images/600/800/g2/b1/o4.webp",
-      "https://gg.lnwfile.com/_webp_max_images/600/600/9a/22/71.webp",
-      "https://gg.lnwfile.com/_webp_max_images/600/600/v7/i9/a5.webp",
-      "https://gg.lnwfile.com/_webp_max_images/600/600/o5/1y/3h.webp",
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
     ],
-    description: "สตูลทรงกระบอกผ้ากำมะหยี่คุณภาพสูง นุ่มสบาย ดีไซน์โมเดิร์น เหมาะสำหรับทุกห้อง",
+    description:
+      "สตูลทรงกระบอกผ้ากำมะหยี่คุณภาพสูง นุ่มสบาย ดีไซน์โมเดิร์น เหมาะสำหรับทุกห้อง",
     specs: [
       "วัสดุ: ผ้ากำมะหยี่",
       "สี: เทาเข้ม",
@@ -43,8 +45,10 @@ export const products = [
     realPrice: 479.2,
     fullPrice: 599,
     discount: 20,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/g2/b1/o4.webp",
-    description: "เก้าอี้สไตล์มินิมอลสีขาวสะอาดตา ขาไม้แข็งแรง เหมาะกับห้องทำงานหรือมุมพักผ่อน",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
+    description:
+      "เก้าอี้สไตล์มินิมอลสีขาวสะอาดตา ขาไม้แข็งแรง เหมาะกับห้องทำงานหรือมุมพักผ่อน",
     specs: [
       "วัสดุ: พลาสติก PP + ขาไม้",
       "สี: ขาว",
@@ -58,8 +62,10 @@ export const products = [
     category: "accessories",
     name: "เก้าอี้รับประทานอาหาร เบาะเทาเข้ม",
     realPrice: 3590,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/g2/b1/o4.webp",
-    description: "เก้าอี้รับประทานอาหารเบาะนุ่มสบาย โครงไม้แข็งแรง ดีไซน์หรูหรา",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
+    description:
+      "เก้าอี้รับประทานอาหารเบาะนุ่มสบาย โครงไม้แข็งแรง ดีไซน์หรูหรา",
     specs: [
       "วัสดุ: ผ้าบุเบาะ + โครงไม้",
       "สี: เทาเข้ม",
@@ -75,8 +81,10 @@ export const products = [
     realPrice: 4900,
     fullPrice: 5000,
     discount: 2,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/g2/b1/o4.webp",
-    description: "เก้าอี้โยกพักผ่อน เบาะผ้านุ่มสบาย เหมาะสำหรับมุมพักผ่อนหรือห้องนอน",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.36110421214710975.png",
+    description:
+      "เก้าอี้โยกพักผ่อน เบาะผ้านุ่มสบาย เหมาะสำหรับมุมพักผ่อนหรือห้องนอน",
     specs: [
       "วัสดุ: ผ้าบุเบาะ + โครงไม้",
       "สี: เทาเข้ม",
@@ -94,8 +102,10 @@ export const products = [
     realPrice: 18900,
     fullPrice: 21500,
     discount: 12,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/xi/rp/2r.webp",
-    description: "โซฟาสามที่นั่งผ้าลินินคุณภาพพรีเมียม นุ่มสบาย ดีไซน์หรูหรา เหมาะกับห้องรับแขก",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.4402877138740976.png",
+    description:
+      "โซฟาสามที่นั่งผ้าลินินคุณภาพพรีเมียม นุ่มสบาย ดีไซน์หรูหรา เหมาะกับห้องรับแขก",
     specs: [
       "วัสดุ: ผ้าลินิน + โครงไม้",
       "สี: โอวัลติน",
@@ -109,7 +119,8 @@ export const products = [
     category: "greenhouse",
     name: "โซฟาหนังวินเทจ สีแทน",
     realPrice: 25900,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/xi/rp/2r.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.4402877138740976.png",
     description: "โซฟาหนังวินเทจสไตล์คลาสสิก หนังแท้คุณภาพสูง ทนทานและหรูหรา",
     specs: [
       "วัสดุ: หนังแท้ + โครงไม้",
@@ -126,7 +137,8 @@ export const products = [
     realPrice: 27900,
     fullPrice: 29900,
     discount: 7,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/xi/rp/2r.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.4402877138740976.png",
     description: "โซฟาเข้ามุมใหญ่สบาย เหมาะกับห้องรับแขกขนาดใหญ่ ผ้านุ่มสบาย",
     specs: [
       "วัสดุ: ผ้าบุเบาะ + โครงไม้",
@@ -143,7 +155,8 @@ export const products = [
     realPrice: 27900,
     fullPrice: 29900,
     discount: 7,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/xi/rp/2r.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.4402877138740976.png",
     description: "โซฟาสองที่นั่งขนาดกะทัดรัด เหมาะกับพื้นที่จำกัด ผ้านุ่มสบาย",
     specs: [
       "วัสดุ: ผ้าบุเบาะ + โครงไม้",
@@ -162,8 +175,10 @@ export const products = [
     realPrice: 3290,
     fullPrice: 3890,
     discount: 15,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/v1/kk/4a.webp",
-    description: "โคมไฟยืนทรงโดมสไตล์โมเดิร์น ให้แสงนุ่มนวล เหมาะกับมุมอ่านหนังสือ",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.32382721990493357.png",
+    description:
+      "โคมไฟยืนทรงโดมสไตล์โมเดิร์น ให้แสงนุ่มนวล เหมาะกับมุมอ่านหนังสือ",
     specs: [
       "วัสดุ: โลหะ + ผ้า",
       "สี: ครีม",
@@ -177,8 +192,10 @@ export const products = [
     category: "indoor",
     name: "โคมไฟตั้งโต๊ะ ฐานไม้",
     realPrice: 1490,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/v1/kk/4a.webp",
-    description: "โคมไฟตั้งโต๊ะฐานไม้ธรรมชาติ ดีไซน์เรียบง่าย เหมาะกับโต๊ะทำงาน",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.32382721990493357.png",
+    description:
+      "โคมไฟตั้งโต๊ะฐานไม้ธรรมชาติ ดีไซน์เรียบง่าย เหมาะกับโต๊ะทำงาน",
     specs: [
       "วัสดุ: ไม้ + ผ้า",
       "สี: ไม้ธรรมชาติ",
@@ -194,7 +211,8 @@ export const products = [
     realPrice: 2290,
     fullPrice: 2590,
     discount: 12,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/v1/kk/4a.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.32382721990493357.png",
     description: "โคมไฟเพดานทรงกระบอกสไตล์มินิมอล ให้แสงกระจายสม่ำเสมอ",
     specs: [
       "วัสดุ: โลหะ + แก้ว",
@@ -211,7 +229,8 @@ export const products = [
     realPrice: 2290,
     fullPrice: 2590,
     discount: 12,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/v1/kk/4a.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.32382721990493357.png",
     description: "โคมไฟแขวนทรงกลมแก้วใส สไตล์โมเดิร์น ดูทันสมัย",
     specs: [
       "วัสดุ: แก้วใส + โลหะ",
@@ -228,7 +247,8 @@ export const products = [
     category: "outdoor",
     name: "แจกันเซรามิกสีครีม",
     realPrice: 890,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "แจกันเซรามิกสีครีมดีไซน์เรียบง่าย เหมาะกับการตกแต่งทุกสไตล์",
     specs: [
       "วัสดุ: เซรามิก",
@@ -243,7 +263,8 @@ export const products = [
     category: "outdoor",
     name: "แจกันแก้วใส ฐานไม้",
     realPrice: 1250,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "แจกันแก้วใสฐานไม้ ดีไซน์ธรรมชาติ เหมาะกับดอกไม้สด",
     specs: [
       "วัสดุ: แก้ว + ไม้",
@@ -260,7 +281,8 @@ export const products = [
     realPrice: 1590,
     fullPrice: 1890,
     discount: 16,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "แจกันทรงสูงเคลือบด้าน ดีไซน์โมเดิร์น เหมาะกับดอกไม้แห้ง",
     specs: [
       "วัสดุ: เซรามิก",
@@ -277,7 +299,8 @@ export const products = [
     realPrice: 1590,
     fullPrice: 1890,
     discount: 16,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "แจกันเซรามิกลายหินอ่อนหรูหรา เพิ่มความสวยงามให้ห้อง",
     specs: [
       "วัสดุ: เซรามิก",
@@ -294,7 +317,8 @@ export const products = [
     category: "indoortrim",
     name: "ต้นไม้ประดิษฐ์ในกระถาง",
     realPrice: 890,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "ต้นไม้ประดิษฐ์ดูสมจริง ไม่ต้องรดน้ำ เหมาะกับการตกแต่งภายใน",
     specs: [
       "วัสดุ: พลาสติก + กระถางเซรามิก",
@@ -309,7 +333,8 @@ export const products = [
     category: "indoortrim",
     name: "ต้นไม้จำลองในแจกันแก้ว",
     realPrice: 1250,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "ต้นไม้จำลองในแจกันแก้วสวยงาม เหมาะตกแต่งโต๊ะทำงาน",
     specs: [
       "วัสดุ: พลาสติก + แจกันแก้ว",
@@ -326,7 +351,8 @@ export const products = [
     realPrice: 1590,
     fullPrice: 1890,
     discount: 16,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "ของตกแต่งทรงเรขาคณิตสไตล์โมเดิร์น เพิ่มความทันสมัยให้ห้อง",
     specs: [
       "วัสดุ: โลหะ",
@@ -343,7 +369,8 @@ export const products = [
     realPrice: 1590,
     fullPrice: 1890,
     discount: 16,
-    image: "https://gg.lnwfile.com/_webp_resize_images/600/800/jr/58/j8.webp",
+    image:
+      "https://srdsmlhrnkeyhrfpoaqd.supabase.co/storage/v1/object/public/product-images/0.7357446204792732.jpg",
     description: "กรอบรูปไม้ธรรมชาติ ดีไซน์เรียบง่าย เหมาะกับรูปถ่ายทุกขนาด",
     specs: [
       "วัสดุ: ไม้",
@@ -355,6 +382,10 @@ export const products = [
 ];
 
 // Helper functions
+export const getAllProducts = () => {
+  return products;
+};
+
 export const getProductsByCategory = (category) => {
   return products.filter((product) => product.category === category);
 };
@@ -369,6 +400,9 @@ export const getProductById = (id) => {
 
 export const getRelatedProducts = (currentProductId, category, limit = 4) => {
   return products
-    .filter((product) => product.category === category && product.id !== currentProductId)
+    .filter(
+      (product) =>
+        product.category === category && product.id !== currentProductId
+    )
     .slice(0, limit);
 };

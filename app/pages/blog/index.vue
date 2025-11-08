@@ -11,16 +11,35 @@
 
       <!-- Blog Grid -->
       <div class="blog-grid">
-        <CardBlog v-for="blog in allBlogs" :key="blog.id" :blog="blog" />
+        <CardBlog v-for="blog in displayedBlogs" :key="blog.id" :blog="blog" />
+      </div>
+
+      <!-- Show More Button -->
+      <div v-if="!showAll && allBlogs.length > 3" class="show-more-container">
+        <VBtn
+          @click="showAll = true"
+          class="show-more-btn"
+          size="large"
+          variant="outlined"
+        >
+          แสดงทั้งหมด
+        </VBtn>
       </div>
     </VContainer>
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 import { getAllBlogs } from "~/data/blogs.js";
 
 const allBlogs = getAllBlogs();
+const showAll = ref(false);
+
+// Display only 3 blogs initially, show all when showAll is true
+const displayedBlogs = computed(() => {
+  return showAll.value ? allBlogs : allBlogs.slice(0, 3);
+});
 
 // Breadcrumb items
 const breadcrumbItems = [
@@ -84,6 +103,7 @@ useHead({
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  margin-bottom: 40px;
 
   @media (max-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
@@ -92,6 +112,32 @@ useHead({
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+  }
+}
+
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+
+  .show-more-btn {
+    min-width: 200px;
+    border-color: #d49f4d;
+    color: #d49f4d;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #d49f4d;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      min-width: 160px;
+      font-size: 14px;
+    }
   }
 }
 </style>

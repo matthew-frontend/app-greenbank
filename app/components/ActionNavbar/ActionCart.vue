@@ -66,7 +66,7 @@
                   <VIcon
                     v-if="item.quantity === 1"
                     icon="mdi-delete-outline"
-                    size="14"
+                    size="16"
                   />
                   <span v-else>-</span>
                 </VBtn>
@@ -274,12 +274,12 @@ const goToCheckout = () => {
 
       .qty-btn {
         min-width: 30px;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         background-color: #f5f5f5;
         border-radius: 50%;
-        font-size: 12px;
-        font-weight: 300;
+        font-size: 22px;
+        font-weight: 500;
 
         &:hover {
           background-color: #e0e0e0;

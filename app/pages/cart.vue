@@ -105,17 +105,6 @@
             </h2>
             <p class="vat-note">รวมภาษีมูลค่า</p>
           </div>
-
-          <VBtn
-            color="primary"
-            size="x-large"
-            block
-            class="checkout-btn-main"
-            @click="goToCheckout"
-          >
-            เริ่มสั่งซื้อ
-          </VBtn>
-
           <div class="summary-details">
             <div class="summary-row">
               <span>รวมราคาสินค้า</span>
@@ -362,24 +351,6 @@ useHead({
     }
   }
 
-  .checkout-btn-main {
-    background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%) !important;
-    text-transform: none;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    height: 48px !important;
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
-
-    &:hover {
-      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
-    }
-    :deep(span.v-btn__content) {
-      color: #fff;
-    }
-  }
-
   .summary-details {
     padding: 20px 0;
     margin-bottom: 20px;
@@ -425,16 +396,14 @@ useHead({
   }
 
   .checkout-btn-bottom {
-    background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%) !important;
+    background-color: $green;
     text-transform: none;
     font-size: 16px;
     font-weight: 500;
-    border-radius: 8px;
+    margin-bottom: 24px;
     height: 48px !important;
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
-
+    box-shadow: none;
     &:hover {
-      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
     }
     :deep(span.v-btn__content) {
       color: #fff;

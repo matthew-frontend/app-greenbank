@@ -42,12 +42,18 @@
         </div>
 
         <div class="actionUser">
-          <div class="actionIcon">
+          <div class="actionIcon" @click="isSearchOpen = true">
             <VIcon icon="mdi-magnify" size="20" color="#000" />
           </div>
           <div class="actionIcon cart-icon" @click="toggleCart">
             <VIcon icon="mdi-cart-outline" size="20" color="#000" />
             <span v-if="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
+          </div>
+          <div class="language-switcher" @click="toggleLanguage">
+            <span class="lang-text">{{
+              currentLocale === "th" ? "TH" : "EN"
+            }}</span>
+            <VIcon icon="mdi-chevron-down" size="16" color="#000" />
           </div>
           <div class="linkLogin">
             <NuxtLink to="/login" class="">เข้าสู่ระบบ</NuxtLink>
@@ -78,6 +84,9 @@
 
   <!-- Drawer Cart -->
   <ActionNavbarActionCart v-model:is-open="isCartOpen" />
+
+  <!-- Search Modal -->
+  <ActionNavbarSearchModal v-model:is-open="isSearchOpen" />
 </template>
 
 <script setup>
@@ -92,9 +101,18 @@ const props = defineProps({
 
 const drawer = ref(false);
 const isScrolled = ref(false);
+const currentLocale = ref("th");
+const isSearchOpen = ref(false);
 
 // Use cart composable
 const { isCartOpen, cartCount, toggleCart } = useCart();
+
+// Language toggle function
+const toggleLanguage = () => {
+  currentLocale.value = currentLocale.value === "th" ? "en" : "th";
+  // TODO: Integrate with i18n when available
+  console.log("Language changed to:", currentLocale.value);
+};
 
 const links = [
   { label: "Accessories", to: "/products/accessories" },
@@ -102,7 +120,7 @@ const links = [
   { label: "Indoor", to: "/products/indoor" },
   { label: "Outdoor", to: "/products/outdoor" },
   { label: "Indoortrim", to: "/products/indoortrim" },
-  { label: "About Us", to: "/about" },
+  // { label: "About Us", to: "/about" },
   { label: "Contact Us", to: "/contact" },
 ];
 
@@ -201,8 +219,8 @@ onBeforeUnmount(() => {
 
           .cart-badge {
             position: absolute;
-            top: -4px;
-            right: -4px;
+            top: -6px;
+            right: 10px;
             background-color: #d49f4d;
             color: #fff;
             font-size: 10px;
@@ -215,6 +233,30 @@ onBeforeUnmount(() => {
             border-radius: 50%;
             padding: 0 4px;
           }
+        }
+      }
+      .language-switcher {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        padding: 6px 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        margin-right: 12px;
+        transition: all 0.2s;
+        background-color: #fff;
+
+        &:hover {
+          background-color: #f5f5f5;
+          border-color: #d49f4d;
+        }
+
+        .lang-text {
+          font-size: 13px;
+          font-weight: 600;
+          color: #000;
+          line-height: 1;
         }
       }
       .linkLogin {

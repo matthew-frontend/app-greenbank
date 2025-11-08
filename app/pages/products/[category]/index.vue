@@ -43,14 +43,18 @@ const breadcrumbs = computed(() => [
   margin-bottom: 20px;
 }
 .gridProduct {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
   gap: 20px;
-  @media (max-width: 991px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
+  justify-content: center;
+  .boxProduct {
+    flex-basis: calc(20% - 20px);
+    @media (max-width: 991px) {
+      flex-basis: calc(33.333333% - 20px);
+    }
+    @media (max-width: 767px) {
+      flex-basis: calc(50% - 20px);
+    }
   }
 }
 </style>

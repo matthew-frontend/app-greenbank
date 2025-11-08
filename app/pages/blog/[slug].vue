@@ -3,99 +3,46 @@
     <VContainer max-width="1240">
       <!-- Breadcrumbs -->
       <BreadCrumbs :items="breadcrumbItems" />
-
-      <!-- Blog Image -->
-      <div class="blog-image">
-        <img :src="blog.image" :alt="blog.title" />
+      <div class="blog-header">
+        <h1 class="blog-title">ตรวจสอบเลขพัสดุ</h1>
+        <p class="blog-date">
+          <VIcon icon="mdi-clock-outline" color="#666" size="18" />
+          {{ formattedDate }}
+        </p>
       </div>
-      <div class="blog-width">
-        <!-- Blog Header -->
-        <div class="blog-header">
-          <h1 class="blog-title">{{ blog.title }}</h1>
-          <p class="blog-date">
-            <VIcon icon="mdi-clock-outline" color="#666" size="18" />
-            {{ formattedDate }}
-          </p>
+      <div class="grid-blog">
+        <div class="left-blog">
+          <h3>
+            <VIcon icon="mdi-pin" color="red" class="pin" />วิธีการตรวจสอบ / How
+            to Check
+          </h3>
+          <div class="check">
+            <p>1. คัดลอกเลขพัสดุของคุณจากด้านล่าง</p>
+            <p>Copy your tracking number below</p>
+          </div>
+          <div class="check">
+            <p>2. ไปที่เว็บไซต์ J&T Express</p>
+            <p>Go to the J&T Express website</p>
+          </div>
+          <div class="check">
+            <p>3. กดค้นหาเพื่อดูสถานะ</p>
+            <p>Click search to view the status</p>
+          </div>
         </div>
-
-        <!-- Blog Content -->
-        <div class="blog-content" v-html="blog.content"></div>
-
-        <!-- Tags -->
-        <div class="blog-tags" v-if="blog.tags && blog.tags.length > 0">
-          <VBtn
-            v-for="tag in blog.tags"
-            :key="tag"
-            variant="outlined"
-            size="small"
-            class="tag-btn"
-          >
-            {{ tag }}
-          </VBtn>
-        </div>
-
-        <!-- Share Section -->
-        <div class="share-section">
-          <div class="share-content">
-            <div class="share-left">
-              <div class="qr-code">
-                <img :src="qrCodeUrl" alt="QR Code" />
-              </div>
-            </div>
-            <div class="share-right">
-              <div class="share-header">
-                <span class="share-label">Share :</span>
-                <div class="social-icons">
-                  <VBtn
-                    icon
-                    size="medium"
-                    variant="text"
-                    class="social-btn"
-                    @click="shareToFacebook"
-                  >
-                    <VIcon icon="mdi-facebook" />
-                  </VBtn>
-                  <VBtn
-                    icon
-                    size="medium"
-                    variant="text"
-                    class="social-btn"
-                    @click="shareToTwitter"
-                  >
-                    <VIcon icon="mdi-twitter" />
-                  </VBtn>
-                  <VBtn
-                    icon
-                    size="medium"
-                    variant="text"
-                    class="social-btn"
-                    @click="shareToLine"
-                  >
-                    <VIcon icon="mdi-chat" />
-                  </VBtn>
-                </div>
-              </div>
-              <div class="share-url">
-                <VTextField
-                  :model-value="shareUrl"
-                  readonly
-                  variant="outlined"
-                  density="compact"
-                  hide-details
-                >
-                  <template v-slot:append-inner>
-                    <VBtn
-                      icon
-                      size="x-small"
-                      variant="text"
-                      @click="copyToClipboard"
-                    >
-                      <VIcon icon="mdi-content-copy" size="18" />
-                    </VBtn>
-                  </template>
-                </VTextField>
-              </div>
-            </div>
+        <div class="right-blog">
+          <h3>
+            <VIcon icon="mdi-clipboard-text-outline" />รายการเลขพัสดุ / Tracking
+            Numbers
+          </h3>
+          <div class="track-number">
+            <ul>
+              <li>831829658376 <span>Prakit</span></li>
+              <li>831829658376 <span>Jakray</span></li>
+              <li>831829658376 <span>Tony</span></li>
+              <li>831829658376 <span>Mark</span></li>
+              <li>831829658376 <span>Matty</span></li>
+              <li>831829658376 <span>Patty</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -200,28 +147,62 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
-.blog-width {
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.blog-image {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  max-height: 679px;
-
-  img {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    object-fit: cover;
+.grid-blog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  .left-blog {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    h3 {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .pin {
+      transform: rotate(45deg);
+    }
+    .check {
+      margin-bottom: 10px;
+      p:first-child {
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+      p:last-child {
+        color: #959292;
+        font-style: italic;
+        font-weight: 500;
+      }
+    }
+  }
+  .right-blog {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    h3 {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .track-number {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      ul {
+        li {
+          margin-bottom: 5px;
+          span {
+            font-weight: 500;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
   }
 }
-
 .blog-header {
   margin-bottom: 30px;
   .blog-title {

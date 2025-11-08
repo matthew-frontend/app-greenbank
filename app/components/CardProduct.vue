@@ -117,7 +117,7 @@ const handleAddToCart = (event) => {
       max-width: 100%;
       max-height: 100%;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       transition: transform 1s, filter 0.5s ease, -webkit-transform 1s,
         -webkit-filter 0.5s ease;

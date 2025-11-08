@@ -84,20 +84,6 @@
               <!-- เนื้อหาวิธีสั่งซื้อ - จะใส่ภายหลัง -->
             </VExpansionPanelText>
           </VExpansionPanel>
-
-          <VExpansionPanel>
-            <VExpansionPanelTitle class="accordion-title">
-              ติดต่อเรา
-              <template v-slot:actions="{ expanded }">
-                <VIcon
-                  :icon="expanded ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-                />
-              </template>
-            </VExpansionPanelTitle>
-            <VExpansionPanelText class="accordion-content">
-              <!-- เนื้อหาติดต่อเรา - จะใส่ภายหลัง -->
-            </VExpansionPanelText>
-          </VExpansionPanel>
         </VExpansionPanels>
       </v-col>
 
@@ -164,19 +150,14 @@
         <!-- Action Buttons -->
         <div class="action-buttons">
           <VBtn
-            color="secondary"
             size="large"
+            variant="outlined"
             class="action-btn continue-btn"
             @click="continueShopping"
           >
             ช็อปปิ้งต่อ
           </VBtn>
-          <VBtn
-            color="primary"
-            size="large"
-            class="action-btn buy-now-btn"
-            @click="buyNow"
-          >
+          <VBtn size="large" class="action-btn buy-now-btn" @click="buyNow">
             ซื้อเลย
           </VBtn>
         </div>
@@ -185,7 +166,7 @@
 
     <!-- Related Products Section -->
     <div class="related-products">
-      <h2 class="section-title">สินค้าที่เกี่ยวข้อง</h2>
+      <h2 class="section-title">สินค้าแนะนำ</h2>
       <div class="related-grid">
         <CardProduct v-for="item in related" :key="item.id" :product="item" />
       </div>
@@ -398,12 +379,9 @@ useHead({
 
 // Right Column - Info
 .product-info {
-  @media (min-width: 960px) {
-    position: sticky;
-    top: 100px;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-  }
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 
   .product-title {
     font-size: 28px;
@@ -526,18 +504,13 @@ useHead({
   .add-cart-btn {
     max-width: 220px;
     width: 100%;
-    background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%) !important;
+    background-color: $primary;
     text-transform: none;
     font-size: 16px;
     font-weight: 500;
-    border-radius: 12px;
     height: 48px !important;
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
+    box-shadow: none;
     margin-bottom: 20px;
-
-    &:hover {
-      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
-    }
     :deep(span.v-btn__content) {
       color: #fff;
     }
@@ -553,19 +526,35 @@ useHead({
       text-transform: none;
       font-size: 16px;
       font-weight: 500;
-      border-radius: 12px;
       height: 48px !important;
-      :deep(span.v-btn__content) {
-        color: #fff;
-      }
+      transition: all 0.3s ease;
     }
 
     .continue-btn {
-      background-color: $primary !important;
+      background-color: #fff !important;
+      border: 1px solid #d49f4d !important;
+      :deep(span.v-btn__content) {
+        color: #d49f4d;
+      }
+
+      &:hover {
+        background-color: #fffbf5 !important;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(212, 159, 77, 0.2);
+      }
     }
 
     .buy-now-btn {
-      background-color: #102e19 !important;
+      background: linear-gradient(135deg, #102e19 0%, #0a1f11 100%) !important;
+      box-shadow: 0 2px 8px rgba(16, 46, 25, 0.3);
+      :deep(span.v-btn__content) {
+        color: #fff;
+      }
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(16, 46, 25, 0.4);
+        transform: translateY(-1px);
+      }
     }
   }
 }
@@ -583,20 +572,18 @@ useHead({
   }
 
   .related-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 20px;
-
-    @media (max-width: 960px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 480px) {
-      grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    justify-content: center;
+    .boxProduct {
+      flex-basis: calc(25% - 20px);
+      @media (max-width: 991px) {
+        flex-basis: calc(33.333333% - 20px);
+      }
+      @media (max-width: 767px) {
+        flex-basis: calc(50% - 20px);
+      }
     }
   }
 }
