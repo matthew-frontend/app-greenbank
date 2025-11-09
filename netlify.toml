@@ -1,6 +1,6 @@
 [build]
   base = "app"
-  publish = ".output/public"
+  publish = "dist"
   command = "npm run generate"
 
 [[redirects]]
