@@ -151,6 +151,9 @@ useHead({
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  @media (max-width: 767px) {
+    grid-template-columns: 100%;
+  }
   .left-blog {
     border: 1px solid #eee;
     border-radius: 8px;

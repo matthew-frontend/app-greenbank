@@ -235,10 +235,15 @@ onBeforeUnmount(() => {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      @media (max-width: 767px) {
+        gap: 6px;
+      }
       .actionIcon {
         width: 40px;
         cursor: pointer;
-
+        @media (max-width: 767px) {
+          width: auto;
+        }
         &.cart-icon {
           position: relative;
 
@@ -271,7 +276,10 @@ onBeforeUnmount(() => {
         margin-right: 12px;
         transition: all 0.2s;
         background-color: #fff;
-
+        @media (max-width: 767px) {
+          margin-right: 0;
+          padding: 5px 7px;
+        }
         &:hover {
           background-color: #f5f5f5;
           border-color: #d49f4d;
@@ -282,6 +290,9 @@ onBeforeUnmount(() => {
           font-weight: 600;
           color: #000;
           line-height: 1;
+          @media (max-width: 767px) {
+            font-size: 12px;
+          }
         }
       }
       .linkLogin {
@@ -294,6 +305,9 @@ onBeforeUnmount(() => {
           text-decoration: none;
           font-weight: 500;
           transition: opacity 0.2s;
+          @media (max-width: 767px) {
+            font-size: 12px;
+          }
         }
       }
     }
